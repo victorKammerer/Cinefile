@@ -51,6 +51,7 @@ extension FeaturedViewController: UICollectionViewDataSource {
         Task {
             let imageData = await Movie.downloadImageData(withPath: movie.backdropPath)
             let image: UIImage = UIImage(data: imageData) ?? UIImage()
+            
             Cell?.setup(title: movie.title, image: image)
         }
         

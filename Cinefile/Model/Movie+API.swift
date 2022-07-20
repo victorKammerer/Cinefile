@@ -14,7 +14,7 @@ extension Movie {
     static func MoviesAPI(section: String) async -> [Movie] {
         
         var components = Movie.urlComponents
-        components.path = "/3/movie/\(section)"
+        components.path = "/3/\(section)"
         components.queryItems = [
             URLQueryItem(name: "api_key", value: Movie.apiKey)
         ]

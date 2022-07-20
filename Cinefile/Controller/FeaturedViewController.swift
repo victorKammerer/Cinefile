@@ -31,13 +31,13 @@ class FeaturedViewController: UIViewController {
         upcomingCollectionView.delegate = self
         
         Task {
-            popularMovies = await Movie.MoviesAPI(section: "popular")
+            popularMovies = await Movie.MoviesAPI(section: "movie/popular")
             self.popularCollectionView.reloadData()
             
-            nowPlayingMovies = await Movie.MoviesAPI(section: "now_playing")
+            nowPlayingMovies = await Movie.MoviesAPI(section: "movie/now_playing")
             self.nowPlayingCollectionView.reloadData()
             
-            upcomingMovies = await Movie.MoviesAPI(section: "upcoming")
+            upcomingMovies = await Movie.MoviesAPI(section: "movie/upcoming")
             self.upcomingCollectionView.reloadData()
         }
         
